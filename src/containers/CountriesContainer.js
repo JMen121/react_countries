@@ -3,10 +3,9 @@ import { useEffect, useState } from "react";
 
 
 const CountriesContainers = () => {
-const[countriesVisted, setCountriesVisted] = useState(null)
-const [countriesNotVisted, setCountriesNotVisted]= useState (null)
+const[countriesVisted, setCountriesVisted] = useState([])
+const [countriesNotVisted, setCountriesNotVisted]= useState ([])
     
-
     const loadCountriesData = async () =>{
     const response = await fetch ("https://restcountries.com/v3.1/all");
     const data = await response.json();
@@ -17,13 +16,15 @@ const [countriesNotVisted, setCountriesNotVisted]= useState (null)
     useEffect (() =>{
     loadCountriesData ();
     }, [])
-    
+   
     return (
         <>
         <h4>The Ultimate To-Do List</h4>
+      <CountriesComponent countriesNotVisited={countriesNotVisted}/>
         {}
         </>
       );
+
 }
  
 export default CountriesContainers ;
