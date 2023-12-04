@@ -1,4 +1,6 @@
 import CountriesComponent from "../components/CountriesComponent";
+import CountriesButton from "../components/CountriesButton";
+import Country from "../components/country";
 import { useEffect, useState } from "react";
 
 
@@ -19,22 +21,22 @@ const [countriesNotVisted, setCountriesNotVisted]= useState ([])
     }, [])
 
 
-    const displayCountryAsMarked=((countriesVisted) => {
+    const displayCountryAsMarked=((newCountryVisted) => {
     const updateCountriesVisited = [...countriesVisted]
-    updateCountriesVisited.push(countriesVisted)
+    updateCountriesVisited.push(newCountryVisted)
     setCountriesVisted(updateCountriesVisited)
     console.log ({displayCountryAsMarked})
     })
 
     const onButtonClick = () =>{
-    displayCountryAsMarked(country)
+    displayCountryAsMarked(Country)
    }
    
     return (
         <>
         <h4>The Ultimate To-Do List</h4>
-      <CountriesComponent countriesNotVisited={countriesNotVisted}/>
-
+      <CountriesComponent countriesNotVisited={countriesNotVisted} displayCountryAsMarked = {displayCountryAsMarked}/>
+      <CountriesButton onButtonClick={displayCountryAsMarked} />
      
         </>
       );

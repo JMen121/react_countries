@@ -1,4 +1,5 @@
-import Country from "./country";
+import Country from "./country"
+
 const CountriesComponent = ({countriesNotVisited}) => {
   const countriesMapped = countriesNotVisited.map((country, id)=><Country country={country} key={id}/>
 )     
