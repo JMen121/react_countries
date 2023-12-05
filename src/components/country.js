@@ -1,7 +1,7 @@
 
 const Country = ({country}) => {
     return (  
-        <h2>Name:{country.name.common}</h2>
+        <h5> Name : {country.name.common}</h5>
     );
 }
  

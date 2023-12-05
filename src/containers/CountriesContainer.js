@@ -19,14 +19,19 @@ const [countriesNotVisited, setCountriesNotVisited]= useState ([])
     loadCountriesData ();
     }, [])
 
-
-    const handleCountryMarked=(newCountryNotVisited) => {
-    const updateCountriesNotVisited = [...countriesNotVisited]
-    updateCountriesNotVisited.push(newCountryNotVisited)
-    setCountriesNotVisited(updateCountriesNotVisited)
+    //function that takes in a country as a argument
+    //this is making a copy of each array- we create new arrays instead of copying existing because its good practice
+    const markCountryAsVisited = (country) => {
+        const updatedCountriesNotVisited = [...countriesNotVisited];
+        const updatedCountriesVisited = [...countriesVisited];
+        //The splice() method is then used to remove the country from the updatedCountriesNotVisited array. 
+        const countryLocation = updatedCountriesNotVisited.indexOf(country)
+        updatedCountriesNotVisited.splice(countryLocation, 1);
+        updatedCountriesVisited.push(country);
+        
+        setCountriesNotVisited (updatedCountriesNotVisited);
+        setCountriesVisited (updatedCountriesVisited);
     }
-   
-  };
 
 
 
@@ -34,12 +39,15 @@ const [countriesNotVisited, setCountriesNotVisited]= useState ([])
         <>
         <section>
 
-            <h4>The Ultimate To-Do List</h4>
+            <h1>The Ultimate To-Do List</h1>
              </section>
 
         <section>
-            <h3>Countries that I have visited</h3>
-            <CountriesComponent countriesNotVisited={countriesNotVisited} />
+            <h4>Countries that I have visited</h4>
+            <CountriesComponent countriesNotVisited={countriesNotVisited}
+             handleCountryMarked={markCountryAsVisited}
+            />
+            
              </section>
 
         <section>
@@ -48,7 +56,7 @@ const [countriesNotVisited, setCountriesNotVisited]= useState ([])
             </>
     
     );
-
+}
     
  
 export default CountriesContainers ;
