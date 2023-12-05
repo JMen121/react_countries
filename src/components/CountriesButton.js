@@ -1,13 +1,18 @@
 
-const CountriesButton = ({country, onButtonClick}) => {
+// const CountriesButton = ({onButtonClick}, displayCountryAsMarked, country) => {
+// //        displayCountryAsMarked(country)
+// //        return ( 
+// //         <>
+// //         <button onClick = {onButtonClick}>Mark as Completed</button>
+// //         </>
+// //     );
+
+// //     }
+  
     
-    return ( 
-        <>
-        <button onClick = {onButtonClick}>Mark as Completed</button>
-        </>
-    );
+  
 
     
-}
+
  
-export default CountriesButton;
+// export default CountriesButton;
