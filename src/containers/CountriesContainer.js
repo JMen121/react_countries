@@ -44,11 +44,14 @@ const [countriesNotVisited, setCountriesNotVisited]= useState ([])
 
         <section>
             <h4>Countries that I have visited</h4>
-            <CountriesComponent countriesNotVisited={countriesNotVisited}
+            <CountriesComponent 
+            countriesNotVisited={countriesNotVisited} />
              handleCountryMarked={markCountryAsVisited}
-            />
+             
+           
             
-             </section>
+             </section> 
+       
 
         <section>
            <h3>Countries that I have  not visited</h3>

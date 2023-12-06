@@ -1,18 +1,17 @@
 
-// const CountriesButton = ({onButtonClick}, displayCountryAsMarked, country) => {
-// //        displayCountryAsMarked(country)
-// //        return ( 
-// //         <>
-// //         <button onClick = {onButtonClick}>Mark as Completed</button>
-// //         </>
-// //     );
+// const CountriesButton = ({country,handleCountryMarked}) => {
+//        const handleCountryClicked = () => {handleCountryMarked(country);
+//        }
 
-// //     }
-  
-    
-  
 
-    
+//        return ( 
+//         <>
+        
+//         <button onClick = {handleCountryClicked}>Mark as Completed</button>
+        
+//         </>
+//     );
 
- 
+//     }
+//   console.log("button");
 // export default CountriesButton;
